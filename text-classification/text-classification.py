@@ -28,6 +28,7 @@ vectorizer = CountVectorizer(inputCol="words", outputCol="features")
 # Convert string labels into integers
 label_indexer = StringIndexer(inputCol="label", outputCol="label_index")
 
+# Learn a naive Bayes classifier
 classifier = NaiveBayes(
     labelCol="label_index", featuresCol="features", predictionCol="label_index_predicted",
 )
